@@ -1,0 +1,19 @@
+{% extends 'plist/base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-8">
+        {% for pokemon in pokemons%}
+        <div class="pokemon">
+          <div class={{pokemon.element}}>
+            <h1><a href="{% url 'pokemon_detail' pk=pokemon.pk %}">{{ pokemon.name }}</a></h1>
+            <p>Pokemon type: {{ pokemon.element }}</p>
+            <p>Pokemon weakness: {{ pokemon.weakness }}</p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

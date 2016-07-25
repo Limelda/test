@@ -1,0 +1,9 @@
+{% extends 'plist/base.html' %}
+
+{% block content %}
+    <h1>New pokemon</h1>
+    <form method="POST" class="pokemon-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

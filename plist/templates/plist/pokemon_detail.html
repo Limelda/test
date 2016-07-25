@@ -1,0 +1,15 @@
+{% extends 'plist/base.html' %}
+
+   {% block content %}
+       <div class="pokemon">
+           <div class="date">
+                   {% if user.is_authenticated %}
+                   <a class="btn btn-default" href="{% url 'pokemon_edit' pk=pokemon.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                   {% endif %}
+                   Creation date: {{ pokemon.created_date }}
+           </div>
+           <h1>{{ pokemon.name }}</h1>
+           <p>Pokemon type: {{ pokemon.element }}</p>
+           <p>Pokemon weakness: {{ pokemon.weakness }}</p>
+       </div>
+   {% endblock %}
